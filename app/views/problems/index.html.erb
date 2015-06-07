@@ -1,0 +1,18 @@
+<% if current_user %>
+  <%= link_to 'New complaint', new_problem_path, class: 'btn btn-lg btn-primary align-left' %>
+<% end %>
+
+<h1>Guestbook</h1>
+
+<hr>
+<ul>
+  <% @problems.each do |problem| %>
+    <li>
+      <h4><%= problem.doubt %></h4>
+      <% if current_user.try(:admin?) %>
+        <%= link_to 'Delete', problem, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </li>
+    <hr>
+  <% end %>
+</ul>

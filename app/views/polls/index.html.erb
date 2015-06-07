@@ -1,0 +1,25 @@
+<% if current_user.try(:admin?) %>
+  <%= link_to 'New Poll', new_poll_path, class: 'btn btn-lg btn-primary align-right' %>
+<% end %>
+<h1>Polls available</h1>
+<br />
+<hr>
+<% @polls.each do |poll| %>
+  <div class="well">
+    <h2><%= poll.topic %> <small>(voted: <%= poll.votes_summary %>)</small></h2>
+
+    <% if current_user.try(:admin?) %>
+      <div class="btn-group">  
+        <%= link_to 'Edit', edit_poll_path(poll), class: 'btn btn-default' %>
+        <%= link_to 'Destroy', poll, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
+      </div>
+    <p>  
+      <% elsif current_user %>
+        <%= link_to 'Vote', poll, class: 'btn btn-primary btn-lg block' %>
+      <% else %>
+        <%= link_to 'Sign in', new_user_session_path %> to participate.
+      <% end %>
+    </p>
+  </div>
+<% end %>
+

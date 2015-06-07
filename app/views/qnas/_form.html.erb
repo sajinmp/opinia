@@ -1,0 +1,15 @@
+<%= form_for(@qna) do |f| %>
+  <%= render 'shared/errors', object: @qna %>
+
+  <div class="form-group">
+    <%= f.label :ques, "Question" %><br>
+    <%= f.text_field :ques, class: 'myfield form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mail %><br>
+    <%= f.text_field :mail, class: 'myfield form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit', class: 'btn btn-default' %>
+  </div>
+<% end %>

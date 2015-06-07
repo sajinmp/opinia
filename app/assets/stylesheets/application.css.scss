@@ -1,0 +1,206 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'bootstrap';
+
+.alert-notice {
+  font-size: 15px;
+  @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+}
+
+.inside  {
+  background: #dddddd;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+h1  {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Century SchoolBook URW"; 
+}
+
+.well {
+  h2  {
+    margin-top: 0;
+  }
+}
+
+.progress { 
+  background-image: linear-gradient(to bottom, #bbb 0%, #ccc 100%)
+}
+
+#qafield  {
+  width: 100%;
+}
+
+.align-right  {
+  float: right;
+}
+
+.align-left {
+  float: left;
+}
+
+
+/*  header  */
+
+
+.user {
+  margin-top: 15px;
+  list-style: none;
+}
+
+.user li  {
+  margin-left: 20px;
+}
+
+
+/*  footer  */
+
+
+.footer {
+  margin-top: 140px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+.footer small  {
+  float: right;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #a00;
+}
+
+.footer a  {
+  color: #444;
+}
+
+.footer a:hover  {
+  color: #222;
+}
+
+.footer ul {
+  float: left;
+  list-style: none;
+}
+
+.footer ul li  {
+  float: left;
+  margin-left: 20px;
+}
+
+
+/*  forums  */
+
+
+.forums {
+  list-style: none;
+}
+
+.forums li  {
+  background-color: #e8e8e8;
+  padding: 2px 0 10px 10px;
+}
+
+.forums a {
+  text-decoration: none;
+  color: blue;
+}
+
+.forums a:hover {
+  color: red;
+}
+
+.contents {
+  margin-top: 40px;
+}
+
+.contents p {
+  text-align: justify;
+}
+
+.comments {
+  margin-top: 30px;
+}
+
+.comment-display  {
+  margin-top: 50px;
+}
+
+/*  Pages  */
+
+
+.my-content  {
+  margin: 50px auto;
+  width: 800px;
+}
+
+.my-content > p  {
+  font-weight: bold;
+  font-size: 1.07em;
+  font-family: Georgia;
+  color: #008;
+  padding-top: 10px;
+  text-align: justify;
+}
+
+#about_tagline  {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#about_head {
+  font-size: 4em;
+  font-family: Impact;
+}
+
+#about_thanks {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.align-right  {
+  float: right;
+}
+
+.myimage  {
+  margin: 0px 0 0 20px;
+}
+
+.smp  {
+  padding: 20px 20px 20px 20px;
+  background-color: #ccc;
+  margin-top: 50px;
+  border: 1px dotted black;
+  border-radius: 20px;
+}
+
+.smp > p  {
+  font-weight: bold;
+  font-size: 1.07em;
+  font-family: Georgia;
+  color: #008;
+  padding-top: 10px;
+  text-align: justify;
+}
+
+.myfield  {
+  width: 80%;
+}
+

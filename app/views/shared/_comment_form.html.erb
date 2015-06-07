@@ -1,0 +1,11 @@
+<%= form_for(current_user.comments.build(forum_id: @forum.id)) do |f| %>
+  <%= render 'shared/errors', object: f.object %>
+  <div class="form-group">
+    <%= f.text_area :reply, class: 'form-control' %>
+  </div>
+  <%= f.hidden_field :forum_id %>
+
+  <div class="action">
+    <%= f.submit 'Post comment', class: 'btn btn-primary align-right' %>
+  </div>
+<% end %>

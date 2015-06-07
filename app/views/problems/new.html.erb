@@ -1,0 +1,12 @@
+<h1>Post comment</h1>
+<hr>
+<%= form_for @problem do |f| %>
+  <%= render 'shared/errors', object: @problem %>
+  <div class="field">
+    <%= f.text_area :doubt, placeholder: 'Create question...', rows: 3, id: 'qafield' %>
+  </div>
+
+  <%= f.submit 'Add question', class: 'btn btn-default' %>
+<% end %>
+<br />
+<%= link_to 'Cancel', problems_path, class: 'btn btn-default' %>

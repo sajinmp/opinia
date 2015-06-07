@@ -1,0 +1,15 @@
+<% if current_user.try(:admin?) %>
+  <%= link_to 'New', new_forum_path, class: 'align-right btn btn-primary btn-lg' %>
+<% end %>
+<h1>All forums</h1>
+
+<hr>
+<ul class="forums">
+  <% @forums.each do |forum| %>
+    <li>
+      <h2><%= link_to forum.title, forum %></h2>
+      <p><%= forum.content[0..100] + '...'%></p>
+    </li>
+    <hr>
+  <% end %>
+</ul>
