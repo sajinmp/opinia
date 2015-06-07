@@ -1,9 +1,9 @@
-<h1>Post comment</h1>
+<h1>Add your problem/suggestion</h1>
 <hr>
 <%= form_for @problem do |f| %>
   <%= render 'shared/errors', object: @problem %>
-  <div class="field">
-    <%= f.text_area :doubt, placeholder: 'Create question...', rows: 3, id: 'qafield' %>
+  <div class="form-group">
+    <%= f.text_area :doubt, placeholder: 'Create question...', rows: 3, id: 'qafield', class: 'form-control' %>
   </div>
 
   <%= f.submit 'Add question', class: 'btn btn-default' %>
