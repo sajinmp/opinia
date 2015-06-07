@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   
   before_action :authenticate_user!
-  before_action [:correct_user, :admin_user], only: :destroy
+  before_action :correct_user, only: :destroy
 
   def create
     @forum = Forum.find(params[:comment][:forum_id])
@@ -15,8 +15,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    forumid = @comment.forum_id
     @comment.destroy
-    redirect_to @forum
+    redirect_to Forum.find_by_id(forumid)
   end
 
   private
@@ -27,11 +28,9 @@ class CommentsController < ApplicationController
 
     def correct_user
       @comment = current_user.comments.find_by(id: params[:id])
-      redirect_to @forum if @comment.nil?
-    end
-
-    def admin_user
-      redirect_to @forum unless current_user.admin?
+      if @comment.nil? && !current_user.admin? 
+        redirect_to @forum
+      end
     end
 
 end
