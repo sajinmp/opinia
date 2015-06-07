@@ -8,6 +8,8 @@ class ForumsController < ApplicationController
 
   def show
     @forum = Forum.find(params[:id])
+    @comments = @forum.comments.order('created_at DESC')
+
   end
 
   def new
