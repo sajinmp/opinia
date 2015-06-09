@@ -38,11 +38,12 @@ ActiveRecord::Schema.define(version: 20150606230934) do
 
   create_table "problems", force: :cascade do |t|
     t.string   "doubt"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "problems", ["created_at"], name: "index_problems_on_user_id_and_created_at"
+  add_index "problems", ["user_id", "created_at"], name: "index_problems_on_user_id_and_created_at"
 
   create_table "qnas", force: :cascade do |t|
     t.string   "ques"
