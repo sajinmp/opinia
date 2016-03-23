@@ -24,6 +24,7 @@ gem 'bootstrap-will_paginate'
 gem 'bootstrap-sass'
 gem 'faker'
 
+gem 'figaro'
 gem 'puma'
 
 group :development, :test do
