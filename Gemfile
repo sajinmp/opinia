@@ -24,9 +24,19 @@ gem 'bootstrap-will_paginate'
 gem 'bootstrap-sass'
 gem 'faker'
 
+gem 'puma'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+end
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
 
 group :test do
